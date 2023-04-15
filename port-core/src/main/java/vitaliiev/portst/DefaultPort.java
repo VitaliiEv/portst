@@ -137,7 +137,8 @@ public class DefaultPort implements Port {
     @Override
     public String toString() {
         return "DefaultPort{" +
-                "result=" + Arrays.toString(result) +
-                '}';
+                "result=" + Arrays.stream(this.result)
+                .map(Arrays::toString)
+                .collect(Collectors.toList()) +'}';
     }
 }
